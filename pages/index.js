@@ -5,6 +5,10 @@ export default function Home() {
   const [valor, setValor] = useState(0);
   const [resultado, setResultado] = useState(null);
 
+  const formatearPesos = (numero) => {
+    return new Intl.NumberFormat('es-AR').format(numero);
+  };
+
   const handleSimulacion = async () => {
     const response = await fetch("https://telotraigo-backend.onrender.com/api/dolar-oficial");
     const data = await response.json();
@@ -28,13 +32,14 @@ export default function Home() {
 
     const ahorro = precioArgentina - totalConComision;
 
-   setResultado({
-  origen: pais,
-  precioExterior: formatearPesos(precioFinal * dolar),
-  totalConComision: formatearPesos(totalConComision * dolar),
-  precioArgentina: formatearPesos(precioArgentina * dolar),
-  ahorro: formatearPesos(ahorro * dolar),
-});
+    setResultado({
+      origen: pais,
+      precioExterior: formatearPesos(precioFinal * dolar),
+      totalConComision: formatearPesos(totalConComision * dolar),
+      precioArgentina: formatearPesos(precioArgentina * dolar),
+      ahorro: formatearPesos(ahorro * dolar),
+    });
+  };
 
   return (
     <>
@@ -88,21 +93,21 @@ export default function Home() {
               Calcular
             </button>
 
-{resultado && (
-  <div className="mt-6 text-sm bg-blue-50 p-4 rounded-lg">
-    <p><strong>Origen:</strong> {resultado.origen}</p>
-    <p><strong>Precio exterior:</strong> ARS {resultado.precioExterior}</p>
-    <p><strong>Total con comisión:</strong> ARS {resultado.totalConComision}</p>
-    <p><strong>Precio en Argentina:</strong> ARS {resultado.precioArgentina}</p>
-    <p className="text-green-600 font-semibold">
-      Ahorro estimado: ARS {resultado.ahorro}
-    </p>
-  </div>
-)}
+            {resultado && (
+              <div className="mt-6 text-sm bg-blue-50 p-4 rounded-lg">
+                <p><strong>Origen:</strong> {resultado.origen}</p>
+                <p><strong>Precio exterior:</strong> ARS {resultado.precioExterior}</p>
+                <p><strong>Total con comisión:</strong> ARS {resultado.totalConComision}</p>
+                <p><strong>Precio en Argentina:</strong> ARS {resultado.precioArgentina}</p>
+                <p className="text-green-600 font-semibold">
+                  Ahorro estimado: ARS {resultado.ahorro}
+                </p>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Preguntas Frecuentes */}
+        {/* PREGUNTAS FRECUENTES */}
         <section id="preguntas" className="mt-16 bg-white py-12 px-6 rounded-xl shadow-md max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Preguntas Frecuentes</h2>
           <div className="space-y-6">
@@ -133,7 +138,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ¿Cómo funciona? */}
+        {/* ¿CÓMO FUNCIONA? */}
         <section className="mt-16 bg-white py-12 px-6 rounded-xl shadow-md max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">¿Cómo funciona?</h2>
           <div className="grid md:grid-cols-2 gap-8 text-gray-800">
@@ -156,7 +161,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contacto */}
+        {/* CONTACTO */}
         <div id="contacto" className="bg-white rounded-xl shadow-md p-6 mt-16 max-w-xl mx-auto">
           <h2 className="text-xl font-semibold mb-4">Contacto</h2>
           <form className="space-y-4">
@@ -179,7 +184,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Botón de WhatsApp flotante */}
+      {/* WHATSAPP */}
       <a
         href="https://wa.me/5492964414587"
         target="_blank"
@@ -194,6 +199,7 @@ export default function Home() {
     </>
   );
 }
+
 
 
 
