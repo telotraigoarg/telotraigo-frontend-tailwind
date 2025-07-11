@@ -37,6 +37,17 @@ export default function Home() {
   };
 
   return (
+    <nav className="bg-white shadow-md fixed w-full z-50">
+  <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div className="text-lg font-bold text-blue-600">Te Lo Traigo Autos</div>
+    <div className="space-x-4">
+      <a href="#inicio" className="text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
+      <a href="#simulador" className="text-gray-700 hover:text-blue-600 font-medium">Simulador</a>
+      <a href="#preguntas" className="text-gray-700 hover:text-blue-600 font-medium">Preguntas</a>
+      <a href="#contacto" className="text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
+    </div>
+  </div>
+</nav>
     <div className="min-h-screen bg-gray-50 py-10">
       <div className="container mx-auto p-4">
         {/* Simulador */}
