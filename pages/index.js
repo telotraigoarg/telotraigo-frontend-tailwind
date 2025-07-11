@@ -67,10 +67,27 @@ export default function Home() {
           />
 
           <button
-            clas
+            className="bg-blue-600 text-white rounded w-full py-2 font-bold hover:bg-blue-700 transition"
+            onClick={calcular}
+          >
+            Calcular
+          </button>
 
-      </div>
-    </div>
+          {resultado && (
+            <div className="text-left mt-4 space-y-1">
+              <p className="text-lg font-semibold text-green-700">
+                Importando desde {pais} pagás: ARS {resultado.totalARS.toLocaleString()}
+              </p>
+              <p className="text-sm">En Argentina cuesta: ARS 82.000.000</p>
+              <p className="text-blue-600 font-bold">
+                Ahorrás ARS {resultado.ahorro.toLocaleString()} ({resultado.porcentaje}%)
+              </p>
+            </div>
+          )}
+        </div>
+      </main>
+    </>
   );
 }
+
 
