@@ -89,18 +89,17 @@ export default function Home() {
               Calcular
             </button>
 
-            {resultado && (
-              <div className="mt-6 text-sm bg-blue-50 p-4 rounded-lg">
-             <p><strong>Precio exterior:</strong> ARS {resultado.precioExterior}</p>
-<p><strong>Total con comisión:</strong> ARS {resultado.totalConComision}</p>
-<p><strong>Precio en Argentina:</strong> ARS {resultado.precioArgentina}</p>
-<p className="text-green-600 font-semibold">
-  Ahorro estimado: ARS {resultado.ahorro}
-</p>
-
-                </p>
-              </div>
-            )}
+{resultado && (
+  <div className="mt-6 text-sm bg-blue-50 p-4 rounded-lg">
+    <p><strong>Origen:</strong> {resultado.origen}</p>
+    <p><strong>Precio exterior:</strong> ARS {resultado.precioExterior}</p>
+    <p><strong>Total con comisión:</strong> ARS {resultado.totalConComision}</p>
+    <p><strong>Precio en Argentina:</strong> ARS {resultado.precioArgentina}</p>
+    <p className="text-green-600 font-semibold">
+      Ahorro estimado: ARS {resultado.ahorro}
+    </p>
+  </div>
+)}
           </div>
         </div>
 
