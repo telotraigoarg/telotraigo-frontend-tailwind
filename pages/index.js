@@ -91,12 +91,13 @@ export default function Home() {
 
             {resultado && (
               <div className="mt-6 text-sm bg-blue-50 p-4 rounded-lg">
-                <p><strong>Origen:</strong> {resultado.origen}</p>
-                <p><strong>Precio exterior:</strong> USD {resultado.precioExterior}</p>
-                <p><strong>Total con comisión:</strong> USD {resultado.totalConComision}</p>
-                <p><strong>Precio en Argentina:</strong> USD {resultado.precioArgentina}</p>
-                <p className="text-green-600 font-semibold">
-                  Ahorro estimado: USD {resultado.ahorro}
+             <p><strong>Precio exterior:</strong> ARS {resultado.precioExterior}</p>
+<p><strong>Total con comisión:</strong> ARS {resultado.totalConComision}</p>
+<p><strong>Precio en Argentina:</strong> ARS {resultado.precioArgentina}</p>
+<p className="text-green-600 font-semibold">
+  Ahorro estimado: ARS {resultado.ahorro}
+</p>
+
                 </p>
               </div>
             )}
