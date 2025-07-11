@@ -176,6 +176,29 @@ export default function Home() {
     </div>
   </div>
 </section>
+{/* Botón de WhatsApp flotante */}
+<a
+  href="https://wa.me/5492964414587"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg p-4 z-50"
+  title="Contactanos por WhatsApp"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3 3l1.29 5.5a11 11 0 1015.38-1.86L21 3"
+    />
+  </svg>
+</a>
 
       </div>
     </div>
