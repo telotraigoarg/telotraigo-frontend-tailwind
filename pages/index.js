@@ -154,6 +154,29 @@ export default function Home() {
             </div>
           </div>
         </section>
+  {/* ¿Cómo funciona? */}
+<section className="mt-16 bg-white py-12 px-6 rounded-xl shadow-md max-w-4xl mx-auto">
+  <h2 className="text-2xl font-bold text-center mb-8">¿Cómo funciona?</h2>
+  <div className="grid md:grid-cols-2 gap-8 text-gray-800">
+    <div>
+      <h3 className="font-semibold text-blue-600 mb-1">1. Simulá tu ahorro</h3>
+      <p>Usá nuestro simulador para saber cuánto podrías pagar y comparar con el precio en Argentina.</p>
+    </div>
+    <div>
+      <h3 className="font-semibold text-blue-600 mb-1">2. Nos encargamos de todo</h3>
+      <p>Flete, aduana, seguros, homologación: lo resolvemos todo por vos.</p>
+    </div>
+    <div>
+      <h3 className="font-semibold text-blue-600 mb-1">3. Seguimiento personalizado</h3>
+      <p>Vas a tener contacto directo con nuestro equipo durante todo el proceso.</p>
+    </div>
+    <div>
+      <h3 className="font-semibold text-blue-600 mb-1">4. Recibís tu auto legal en Argentina</h3>
+      <p>Cuando todo esté listo, te entregamos el vehículo registrado y listo para circular.</p>
+    </div>
+  </div>
+</section>
+
       </div>
     </div>
   );
