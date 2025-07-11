@@ -8,19 +8,20 @@ export default function Home() {
   const handleSimulacion = async () => {
     const response = await fetch("https://telotraigo-backend.onrender.com/api/dolar-oficial");
     const data = await response.json();
-    const dolar = data.venta;
+    const dolar = parseFloat(data.venta);
 
+    const valorUSD = parseFloat(valor);
     let precioFinal = 0;
 
     if (pais === "EE.UU.") {
-      precioFinal = valor * 1.85 * dolar;
+      precioFinal = valorUSD * 1.85;
     } else if (pais === "Dubái") {
-      precioFinal = valor * 1.5 * dolar;
+      precioFinal = valorUSD * 1.5;
     } else if (pais === "Paraguay") {
-      precioFinal = valor * 1.65 * dolar;
+      precioFinal = valorUSD * 1.65;
     }
 
-    const precioArgentina = valor * 3.2 * dolar;
+    const precioArgentina = valorUSD * 3.2;
     const feeFijo = 800;
     const feeVariable = precioFinal * 0.03;
     const totalConComision = precioFinal + feeFijo + feeVariable;
@@ -29,10 +30,10 @@ export default function Home() {
 
     setResultado({
       origen: pais,
-      precioExterior: precioFinal.toFixed(0),
-      totalConComision: totalConComision.toFixed(0),
-      precioArgentina: precioArgentina.toFixed(0),
-      ahorro: ahorro.toFixed(0),
+      precioExterior: (precioFinal * dolar).toFixed(0),
+      totalConComision: (totalConComision * dolar).toFixed(0),
+      precioArgentina: (precioArgentina * dolar).toFixed(0),
+      ahorro: (ahorro * dolar).toFixed(0),
     });
   };
 
@@ -77,7 +78,7 @@ export default function Home() {
               <input
                 type="number"
                 value={valor}
-                onChange={(e) => setValor(e.target.value)}
+                onChange={(e) => setValor(Number(e.target.value))}
                 className="w-full p-2 border border-gray-300 rounded"
               />
             </div>
@@ -194,8 +195,6 @@ export default function Home() {
     </>
   );
 }
-
-
 
 
 
