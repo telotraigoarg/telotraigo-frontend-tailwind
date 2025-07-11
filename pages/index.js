@@ -39,6 +39,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 py-10">
       <div className="container mx-auto p-4">
+        {/* Simulador */}
         <div className="bg-white rounded-xl shadow-md p-6 max-w-xl mx-auto">
           <h1 className="text-2xl font-bold mb-4 text-center">
             Simulá el ahorro en la importación de tu 0km
@@ -86,7 +87,7 @@ export default function Home() {
           )}
         </div>
 
-        {/* 📩 Sección de contacto */}
+        {/* Contacto */}
         <div className="bg-white rounded-xl shadow-md p-6 mt-10 max-w-xl mx-auto">
           <h2 className="text-xl font-semibold mb-4">Contacto</h2>
           <form className="space-y-4">
@@ -122,10 +123,42 @@ export default function Home() {
             </button>
           </form>
         </div>
+
+        {/* Preguntas Frecuentes */}
+        <section className="mt-16 bg-white py-12 px-6 rounded-xl shadow-md max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-8">Preguntas Frecuentes</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold">¿Quién puede importar un auto?</h3>
+              <p className="text-gray-700">
+                Cualquier persona física con domicilio en Argentina puede importar un auto 0 km por año según la normativa vigente.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">¿Qué autos se pueden importar?</h3>
+              <p className="text-gray-700">
+                Autos nuevos sin uso, que cumplan con la normativa de emisiones y seguridad del país de origen y de Argentina.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">¿Qué incluye el precio final?</h3>
+              <p className="text-gray-700">
+                El precio incluye el costo del vehículo, flete, seguros, impuestos y nuestra comisión (fee fijo + 3% sobre CIF).
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">¿Cuánto tarda el proceso?</h3>
+              <p className="text-gray-700">
+                El proceso completo puede demorar entre 45 y 90 días, dependiendo del país de origen y la logística.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
 }
+
 
 
 
