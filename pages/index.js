@@ -28,14 +28,13 @@ export default function Home() {
 
     const ahorro = precioArgentina - totalConComision;
 
-    setResultado({
-      origen: pais,
-      precioExterior: (precioFinal * dolar).toFixed(0),
-      totalConComision: (totalConComision * dolar).toFixed(0),
-      precioArgentina: (precioArgentina * dolar).toFixed(0),
-      ahorro: (ahorro * dolar).toFixed(0),
-    });
-  };
+   setResultado({
+  origen: pais,
+  precioExterior: formatearPesos(precioFinal * dolar),
+  totalConComision: formatearPesos(totalConComision * dolar),
+  precioArgentina: formatearPesos(precioArgentina * dolar),
+  ahorro: formatearPesos(ahorro * dolar),
+});
 
   return (
     <>
