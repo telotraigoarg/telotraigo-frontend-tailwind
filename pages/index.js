@@ -180,7 +180,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* WHATSAPP */}
+           {/* WHATSAPP */}
       <a
         href="https://wa.me/5492964414587"
         target="_blank"
@@ -193,8 +193,9 @@ export default function Home() {
         </svg>
       </a>
     </>
-  );
-}
+  ); // ⬅️ Esto cierra el return
+} // ⬅️ Esto cierra la función home
+
 
 
 
