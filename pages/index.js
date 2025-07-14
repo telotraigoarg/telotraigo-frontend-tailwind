@@ -43,7 +43,6 @@ export default function Home() {
 
   return (
     <>
-      {/* NAVBAR */}
       <nav className="bg-white shadow-md fixed w-full z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           <div className="text-lg font-bold text-blue-600">Te Lo Traigo Autos</div>
@@ -56,7 +55,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* CONTENIDO PRINCIPAL */}
       <div className="min-h-screen bg-gray-50 pt-24">
         <div id="simulador" className="container mx-auto p-4">
           <div className="bg-white rounded-xl shadow-md p-6 max-w-xl mx-auto">
@@ -92,18 +90,21 @@ export default function Home() {
             >
               Calcular
             </button>
+
             {resultado && (
-  <div className="mt-6 text-sm bg-blue-50 p-4 rounded-lg">
-    <p><strong>Origen:</strong> {resultado.origen}</p>
-    <p><strong>Precio exterior:</strong> ARS {resultado.precioExterior}</p>
-    <p><strong>Total con comisión:</strong> ARS {resultado.totalConComision}</p>
-    <p><strong>Precio en Argentina:</strong> ARS {resultado.precioArgentina}</p>
-    <p className="text-green-600 font-semibold">
-      Ahorro estimado: ARS {resultado.ahorro}
-    </p>
-  </div>
-)}
-        {/* PREGUNTAS FRECUENTES */}
+              <div className="mt-6 text-sm bg-blue-50 p-4 rounded-lg">
+                <p><strong>Origen:</strong> {resultado.origen}</p>
+                <p><strong>Precio exterior:</strong> ARS {resultado.precioExterior}</p>
+                <p><strong>Total con comisión:</strong> ARS {resultado.totalConComision}</p>
+                <p><strong>Precio en Argentina:</strong> ARS {resultado.precioArgentina}</p>
+                <p className="text-green-600 font-semibold">
+                  Ahorro estimado: ARS {resultado.ahorro}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
         <section id="preguntas" className="mt-16 bg-white py-12 px-6 rounded-xl shadow-md max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Preguntas Frecuentes</h2>
           <div className="space-y-6">
@@ -134,7 +135,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ¿CÓMO FUNCIONA? */}
         <section className="mt-16 bg-white py-12 px-6 rounded-xl shadow-md max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">¿Cómo funciona?</h2>
           <div className="grid md:grid-cols-2 gap-8 text-gray-800">
@@ -157,7 +157,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CONTACTO */}
         <div id="contacto" className="bg-white rounded-xl shadow-md p-6 mt-16 max-w-xl mx-auto">
           <h2 className="text-xl font-semibold mb-4">Contacto</h2>
           <form className="space-y-4">
@@ -180,7 +179,6 @@ export default function Home() {
         </div>
       </div>
 
-           {/* WHATSAPP */}
       <a
         href="https://wa.me/5492964414587"
         target="_blank"
@@ -189,14 +187,13 @@ export default function Home() {
         title="Contactanos por WhatsApp"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 448 512" className="w-6 h-6">
-          <path d="M380.9 97.1C339 55.3 283.2 32 224.5 32c-116.4 0-211 94.6-211 211 0 37.2 9.7 73.5 28.3 105.5L1.2 470.3c-2.3 6.6 4.1 13 10.7 10.7l121.7-40.6c31.1 16.8 66.2 25.7 101 25.7h.1c116.3 0 211-94.6 211-211 0-58.6-23.4-113.9-65.8-157z"/>
+          <path d="M380.9 97.1C339 55.3 283.2 32 224.5 32c-116.4 0-211 94.6-211 211 0 37.2 9.7 73.5 28.3 105.5L1.2 470.3c-2.3 6.6 4.1 13 10.7 10.7l121.7-40.6c31.1 16.8 66.2 25.7 101 25.7h.1c116.3 0 211-94.6 211-211 0-58.6-23.4-113.9-65.8-157z" />
         </svg>
-            </a>
+      </a>
     </>
-  ); // <-- esto cierra el return
-}     // <-- esto cierra la función Home
+  );
+}
 
-export default Home; // <-- esta línea probablemente te falta
 
 
 
