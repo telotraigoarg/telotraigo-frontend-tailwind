@@ -25,17 +25,17 @@ export default function Home() {
       precioFinal = valorUSD * 1.65;
     }
 
-    const precioArgentina = valorUSD * 3.2;
-    const feeFijo = 800;
-    const feeVariable = precioFinal * 0.03;
-    const totalConComision = precioFinal + feeFijo + feeVariable;
-
-    const ahorro = precioArgentina - totalConComision;
+  const precioExteriorUSD = valorUSD * coeficiente;
+const precioArgentinaUSD = valorUSD * 3.2;
+const feeFijoUSD = 800;
+const feeVariableUSD = precioExteriorUSD * 0.03;
+const totalConComisionUSD = precioExteriorUSD + feeVariableUSD;
+const totalConComisionARS = (totalConComisionUSD + feeFijoUSD) * dolar;
 
     setResultado({
       origen: pais,
       precioExterior: formatearPesos(precioFinal * dolar),
-      totalConComision: formatearPesos(totalConComision * dolar),
+    totalConComision: formatearPesos(totalConComisionARS),
       precioArgentina: formatearPesos(precioArgentina * dolar),
       ahorro: formatearPesos(ahorro * dolar),
     });
