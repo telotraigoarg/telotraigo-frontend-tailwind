@@ -6,34 +6,48 @@ export default function Home() {
   const [resultado, setResultado] = useState(null);
 
   const formatearPesos = (numero) => {
-    return new Intl.NumberFormat('es-AR', {
-      style: 'currency',
-      currency: 'ARS',
-      minimumFractionDigits: 0
-    }).format(numero);
-  };
+  return new Intl.NumberFormat('es-AR', {
+    style: 'currency',
+    currency: 'ARS',
+    minimumFractionDigits: 0
+  }).format(numero);
+};
 
-  const handleSimulacion = async () => {
-    const response = await fetch("https://telotraigo-backend.onrender.com/api/dolar-oficial");
-    const data = await response.json();
-    const dolar = parseFloat(data.venta);
+const handleSimulacion = async () => {
+  const response = await fetch("https://telotraigo-backend.onrender.com/api/dolar-oficial");
+  const data = await response.json();
+  const dolar = parseFloat(data.venta); // por ejemplo: 1300
 
-    const valorUSD = parseFloat(valor);
-    let coeficiente = 1;
+  const valorUSD = parseFloat(valor); // ejemplo: 10000
+  let coeficiente = 1;
 
-    if (pais === "EE.UU.") {
-      coeficiente = 1.85;
-    } else if (pais === "Dubái") {
-      coeficiente = 1.5;
-    } else if (pais === "Paraguay") {
-      coeficiente = 1.65;
-    }
+  if (pais === "EE.UU.") {
+    coeficiente = 1.85;
+  } else if (pais === "Dubái") {
+    coeficiente = 1.5;
+  } else if (pais === "Paraguay") {
+    coeficiente = 1.65;
+  }
 
-    const precioExteriorUSD = valorUSD * coeficiente;
-    const precioArgentinaUSD = valorUSD * 3.2;
-    const feeFijoUSD = 800;
-    const feeVariableUSD = precioExteriorUSD * 0.03;
-    const totalConComisionUSD = precioExteriorUSD + feeFijoUSD + feeVariableUSD;
+  const precioExteriorUSD = valorUSD * coeficiente;
+  const precioArgentinaUSD = valorUSD * 3.2;
+  const feeFijoUSD = 800;
+  const feeVariableUSD = precioExteriorUSD * 0.03;
+  const totalConComisionUSD = precioExteriorUSD + feeFijoUSD + feeVariableUSD;
+
+  const precioExteriorARS = precioExteriorUSD * dolar;
+  const totalConComisionARS = totalConComisionUSD * dolar;
+  const precioArgentinaARS = precioArgentinaUSD * dolar;
+  const ahorroARS = precioArgentinaARS - totalConComisionARS;
+
+  setResultado({
+    origen: pais,
+    precioExterior: formatearPesos(precioExteriorARS),
+    totalConComision: formatearPesos(totalConComisionARS),
+    precioArgentina: formatearPesos(precioArgentinaARS),
+    ahorro: formatearPesos(ahorroARS),
+  });
+};
 
     setResultado({
       origen: pais,
