@@ -4,6 +4,9 @@ export default function Home() {
   const [pais, setPais] = useState("Dubái");
   const [valor, setValor] = useState(0);
   const [resultado, setResultado] = useState(null);
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
+  const [mensaje, setMensaje] = useState("");
 
   const formatearPesos = (numero) => {
     return new Intl.NumberFormat("es-AR", {
@@ -42,6 +45,12 @@ export default function Home() {
       precioArgentina: formatearPesos(precioArgentinaUSD * dolar),
       ahorro: formatearPesos((precioArgentinaUSD - totalConComisionUSD) * dolar),
     });
+  };
+
+  const handleEnviarWhatsapp = (e) => {
+    e.preventDefault();
+    const texto = `Hola! Soy ${nombre}%0AEmail: ${email}%0AMensaje: ${mensaje}`;
+    window.open(`https://wa.me/5492964414587?text=${texto}`, '_blank');
   };
 
   return (
@@ -107,6 +116,57 @@ export default function Home() {
             )}
           </div>
         </div>
+
+        <section id="preguntas" className="mt-16 bg-white py-12 px-6 rounded-xl shadow-md max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-8">Preguntas Frecuentes</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold">¿Quién puede importar un auto?</h3>
+              <p className="text-gray-700">
+                Cualquier persona física con domicilio en Argentina puede importar un auto 0 km por año según la normativa vigente.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">¿Qué autos se pueden importar?</h3>
+              <p className="text-gray-700">
+                Autos nuevos sin uso, que cumplan con la normativa de emisiones y seguridad del país de origen y de Argentina.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">¿Qué incluye el precio final?</h3>
+              <p className="text-gray-700">
+                El precio incluye el costo del vehículo, flete, seguros, impuestos y nuestra comisión (fee fijo + 3% sobre CIF).
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">¿Cuánto tarda el proceso?</h3>
+              <p className="text-gray-700">
+                El proceso completo puede demorar entre 45 y 90 días, dependiendo del país de origen y la logística.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contacto" className="bg-white rounded-xl shadow-md p-6 mt-16 max-w-xl mx-auto">
+          <h2 className="text-xl font-semibold mb-4">Contacto</h2>
+          <form className="space-y-4" onSubmit={handleEnviarWhatsapp}>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Nombre</label>
+              <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Tu nombre" className="w-full p-2 border border-gray-300 rounded-md" required />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="tucorreo@ejemplo.com" className="w-full p-2 border border-gray-300 rounded-md" required />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Mensaje</label>
+              <textarea value={mensaje} onChange={(e) => setMensaje(e.target.value)} placeholder="Escribí tu consulta acá..." className="w-full p-2 border border-gray-300 rounded-md" rows={4} required />
+            </div>
+            <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+              Enviar por WhatsApp
+            </button>
+          </form>
+        </section>
       </div>
 
       <a
@@ -123,7 +183,6 @@ export default function Home() {
     </>
   );
 }
-
 
 
 
