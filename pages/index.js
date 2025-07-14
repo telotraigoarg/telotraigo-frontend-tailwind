@@ -6,7 +6,11 @@ export default function Home() {
   const [resultado, setResultado] = useState(null);
 
   const formatearPesos = (numero) => {
-    return new Intl.NumberFormat('es-AR').format(numero);
+    return new Intl.NumberFormat('es-AR', {
+      style: 'currency',
+      currency: 'ARS',
+      minimumFractionDigits: 0
+    }).format(numero);
   };
 
   const handleSimulacion = async () => {
@@ -15,29 +19,28 @@ export default function Home() {
     const dolar = parseFloat(data.venta);
 
     const valorUSD = parseFloat(valor);
-    let precioFinal = 0;
+    let coeficiente = 1;
 
     if (pais === "EE.UU.") {
-      precioFinal = valorUSD * 1.85;
+      coeficiente = 1.85;
     } else if (pais === "Dubái") {
-      precioFinal = valorUSD * 1.5;
+      coeficiente = 1.5;
     } else if (pais === "Paraguay") {
-      precioFinal = valorUSD * 1.65;
+      coeficiente = 1.65;
     }
 
-  const precioExteriorUSD = valorUSD * coeficiente;
-const precioArgentinaUSD = valorUSD * 3.2;
-const feeFijoUSD = 800;
-const feeVariableUSD = precioExteriorUSD * 0.03;
-const totalConComisionUSD = precioExteriorUSD + feeVariableUSD;
-const totalConComisionARS = (totalConComisionUSD + feeFijoUSD) * dolar;
+    const precioExteriorUSD = valorUSD * coeficiente;
+    const precioArgentinaUSD = valorUSD * 3.2;
+    const feeFijoUSD = 800;
+    const feeVariableUSD = precioExteriorUSD * 0.03;
+    const totalConComisionUSD = precioExteriorUSD + feeFijoUSD + feeVariableUSD;
 
     setResultado({
       origen: pais,
-      precioExterior: formatearPesos(precioFinal * dolar),
-    totalConComision: formatearPesos(totalConComisionARS),
-      precioArgentina: formatearPesos(precioArgentina * dolar),
-      ahorro: formatearPesos(ahorro * dolar),
+      precioExterior: formatearPesos(precioExteriorUSD * dolar),
+      totalConComision: formatearPesos(totalConComisionUSD * dolar),
+      precioArgentina: formatearPesos(precioArgentinaUSD * dolar),
+      ahorro: formatearPesos((precioArgentinaUSD - totalConComisionUSD) * dolar),
     });
   };
 
