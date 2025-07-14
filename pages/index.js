@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Home() {
   const [pais, setPais] = useState("Dubái");
   const [valor, setValor] = useState(0);
-  const [resultado, setResultado] = useState(null);
+ export default function Home() {
 
   const formatearPesos = (numero) => {
     return new Intl.NumberFormat("es-AR", {
@@ -55,9 +55,9 @@ export default function Home() {
             <a href="#simulador" className="text-gray-700 hover:text-blue-600 font-medium">Simulador</a>
             <a href="#preguntas" className="text-gray-700 hover:text-blue-600 font-medium">Preguntas</a>
             <a href="#contacto" className="text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
-          </div>
-        </div>
-      </nav>
+         // NO pongas esto aún:
+// return ();
+// }
 
       {/* el resto de tu JSX continúa sin cambios */}
     </>
