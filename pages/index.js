@@ -145,7 +145,7 @@ export default function Home() {
             <div>
               <h3 className="font-semibold">¿Cuánto tarda el proceso?</h3>
               <p className="text-gray-700">
-                El proceso completo puede demorar entre 45 y 90 días, dependiendo del país de origen y la logística.
+                El proceso completo puede demorar entre 15 y 90 días, dependiendo del país de origen y la logística.
               </p>
             </div>
           </div>
