@@ -179,9 +179,7 @@ export default function Home() {
                 </p>
               </div>
             )}
-          </div>
-        </div>
-
+          
         <section id="preguntas" className="mt-16 bg-white py-12 px-6 rounded-xl shadow-md max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Preguntas Frecuentes</h2>
           <div className="space-y-6">
