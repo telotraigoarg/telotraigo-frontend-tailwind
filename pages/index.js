@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Image from "next/image";
-<Image src="/logo-te-lo-traigo-autos.png" alt="Te Lo Traigo Autos" width={48} height={48} />
 
 export default function Home() {
   const [pais, setPais] = useState("Dubái");
