@@ -76,21 +76,68 @@ export default function Home() {
     Te Lo Traigo Autos
   </span>
 </div>
-    <div className="space-x-4">
-      <a href="#inicio" className="text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
-      <a href="#simulador" className="text-gray-700 hover:text-blue-600 font-medium">Simulador</a>
-      <a href="#preguntas" className="text-gray-700 hover:text-blue-600 font-medium">Preguntas</a>
-      <a href="#contacto" className="text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
-    </div>
-  </div>
-</nav>
+  <div className="space-x-4">
+            <a href="#inicio" className="text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
+            <a href="#simulador" className="text-gray-700 hover:text-blue-600 font-medium">Simulador</a>
+            <a href="#preguntas" className="text-gray-700 hover:text-blue-600 font-medium">Preguntas</a>
+            <a href="#quienes" className="text-gray-700 hover:text-blue-600 font-medium">Quiénes Somos</a>
+            <a href="#testimonios" className="text-gray-700 hover:text-blue-600 font-medium">Testimonios</a>
+            <a href="#galeria" className="text-gray-700 hover:text-blue-600 font-medium">Galería</a>
+            <a href="#proceso" className="text-gray-700 hover:text-blue-600 font-medium">Proceso</a>
+            <a href="#metodos" className="text-gray-700 hover:text-blue-600 font-medium">Métodos de Pago</a>
+            <a href="#contacto" className="text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
+          </div>
+        </div>
+      </nav>
 
-      <div className="min-h-screen bg-gray-50 pt-24">
-        <div id="simulador" className="container mx-auto p-4">
-          <div className="bg-white rounded-xl shadow-md p-6 max-w-xl mx-auto">
-            <h1 className="text-2xl font-bold mb-4 text-center">
-              Simulá el ahorro en la importación de tu 0km
-            </h1>
+     <div className="min-h-screen bg-gray-50 pt-24">
+        <section id="quienes" className="bg-white py-12 px-6 max-w-4xl mx-auto mt-8 rounded-xl shadow-md">
+          <h2 className="text-2xl font-bold text-center mb-4">Quiénes Somos</h2>
+          <p className="text-gray-700 text-center">
+            Somos un equipo argentino con experiencia en comercio internacional y logística. Nuestro objetivo es ayudarte a importar tu auto 0km al mejor precio, de forma segura y legal.
+          </p>
+        </section>
+
+      <section id="testimonios" className="bg-white py-12 px-6 max-w-4xl mx-auto mt-8 rounded-xl shadow-md">
+          <h2 className="text-2xl font-bold text-center mb-4">Testimonios</h2>
+          <div className="space-y-4 text-gray-800">
+            <p>🚗 “Importé mi Corolla desde EE.UU. con ellos y me ahorré una fortuna. Todo legal y rápido.” – Juan R.</p>
+            <p>🌍 “Desde Dubái a mi casa en Córdoba en menos de 60 días. Gracias!” – Florencia G.</p>
+            <p>💬 “Lo mejor fue el seguimiento personalizado. Me respondieron todo.” – Martín L.</p>
+          </div>
+        </section>
+
+        <section id="galeria" className="bg-white py-12 px-6 max-w-5xl mx-auto mt-8 rounded-xl shadow-md">
+          <h2 className="text-2xl font-bold text-center mb-4">Galería de Autos Importados</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="bg-gray-100 h-48 rounded" />
+            <div className="bg-gray-100 h-48 rounded" />
+            <div className="bg-gray-100 h-48 rounded" />
+          </div>
+        </section>
+
+        <section id="proceso" className="bg-white py-12 px-6 max-w-4xl mx-auto mt-8 rounded-xl shadow-md">
+          <h2 className="text-2xl font-bold text-center mb-4">Proceso Paso a Paso</h2>
+          <ol className="list-decimal list-inside text-gray-800 space-y-2">
+            <li>Elegís el auto y nos pasás el modelo y precio referencial.</li>
+            <li>Te damos un estimado de costos total (CIF + comisión).</li>
+            <li>Firmamos contrato y recibimos el anticipo.</li>
+            <li>Coordinamos la compra y envío internacional.</li>
+            <li>Nosotros nos encargamos de aduana, nacionalización y entrega.</li>
+            <li>Recibís tu auto en Argentina, con todo legal.</li>
+          </ol>
+        </section>
+
+       <section id="metodos" className="bg-white py-12 px-6 max-w-4xl mx-auto mt-8 rounded-xl shadow-md">
+          <h2 className="text-2xl font-bold text-center mb-4">Métodos de Pago</h2>
+          <ul className="text-gray-800 list-disc list-inside space-y-2">
+            <li>Transferencia bancaria en dólares (EE.UU., Dubái, Paraguay)</li>
+            <li>Transferencia en pesos vía CCL (consultar)</li>
+            <li>Pago en cuotas en Argentina (con gestor asociado)</li>
+            <li>Cripto: aceptamos USDT / USDC por contrato</li>
+          </ul>
+        </section>
+      </div>
             <div className="mb-4">
               <label className="block mb-1 text-sm font-medium">Origen</label>
               <select
