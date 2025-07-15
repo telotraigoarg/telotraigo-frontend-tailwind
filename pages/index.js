@@ -58,10 +58,18 @@ export default function Home() {
     <>
       <nav className="bg-white shadow-md fixed w-full z-50">
   <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-    <div className="flex items-center gap-2">
-      <Image src="/logo-te-lo-traigo-autos.png" alt="Te Lo Traigo Autos" width={48} height={48} />
-      <div className="text-lg font-bold text-blue-600">Te Lo Traigo Autos</div>
-    </div>
+    <div className="flex flex-wrap items-center gap-2 min-w-0">
+  <Image
+    src="/logo-te-lo-traigo-autos.png"
+    alt="Te Lo Traigo Autos"
+    width={48}
+    height={48}
+    className="w-10 h-auto"
+  />
+  <span className="text-lg font-bold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis">
+    Te Lo Traigo Autos
+  </span>
+</div>
     <div className="space-x-4">
       <a href="#inicio" className="text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
       <a href="#simulador" className="text-gray-700 hover:text-blue-600 font-medium">Simulador</a>
