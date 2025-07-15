@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Image from "next/image";
-import Logo from "../public/logo-te-lo-traigo-autos.png";
 
 export default function Home() {
   const [pais, setPais] = useState("Dubái");
@@ -58,16 +57,19 @@ export default function Home() {
   return (
     <>
       <nav className="bg-white shadow-md fixed w-full z-50">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="text-lg font-bold text-blue-600">Te Lo Traigo Autos</div>
-          <div className="space-x-4">
-            <a href="#inicio" className="text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
-            <a href="#simulador" className="text-gray-700 hover:text-blue-600 font-medium">Simulador</a>
-            <a href="#preguntas" className="text-gray-700 hover:text-blue-600 font-medium">Preguntas</a>
-            <a href="#contacto" className="text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
-          </div>
-        </div>
-      </nav>
+  <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div className="flex items-center gap-2">
+      <Image src="/logo-te-lo-traigo-autos.png" alt="Te Lo Traigo Autos" width={48} height={48} />
+      <div className="text-lg font-bold text-blue-600">Te Lo Traigo Autos</div>
+    </div>
+    <div className="space-x-4">
+      <a href="#inicio" className="text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
+      <a href="#simulador" className="text-gray-700 hover:text-blue-600 font-medium">Simulador</a>
+      <a href="#preguntas" className="text-gray-700 hover:text-blue-600 font-medium">Preguntas</a>
+      <a href="#contacto" className="text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
+    </div>
+  </div>
+</nav>
 
       <div className="min-h-screen bg-gray-50 pt-24">
         <div id="simulador" className="container mx-auto p-4">
