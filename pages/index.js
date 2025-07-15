@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
   const [pais, setPais] = useState("Dubái");
@@ -56,6 +57,11 @@ export default function Home() {
 
   return (
     <>
+    <Head>
+  <title>Te Lo Traigo Autos</title>
+  <meta name="description" content="Importá tu 0km desde Dubái, EE.UU. o Paraguay y ahorrá miles de dólares. Te lo traemos a Argentina, legal y fácil." />
+  <link rel="icon" href="/favicon.ico" />
+</Head>
       <nav className="bg-white shadow-md fixed w-full z-50">
   <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
     <div className="flex flex-wrap items-center gap-2 min-w-0">
