@@ -251,10 +251,6 @@ export default function Home() {
   );
 }
 
-    </>
-  );
-}
-
 
 
 
