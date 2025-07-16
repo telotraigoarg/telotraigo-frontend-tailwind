@@ -206,14 +206,15 @@ export default function Home() {
           </blockquote>
         </section>
 
-        {/* Galería */}
-        <section id="galeria" className="bg-white py-12 px-6 max-w-5xl mx-auto mt-8 rounded-xl shadow-md">
-  <h2 className="text-2xl font-bold text-center mb-4">Galería de Autos Importados</h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    <Image src="/c63.jpg" alt="c63" width={500} height={300} className="rounded object-cover w-full h-48" />
-    <Image src="/macan.jpg" alt="macan" width={500} height={300} className="rounded object-cover w-full h-48" />
-    <Image src="/mini" alt="mini" width={500} height={300} className="rounded object-cover w-full h-48" />
-          <h2 className="text-2xl font-bold text-center mb-4">
+     {/* Galería */}
+        <section id="galeria" className="mx-auto max-w-4xl bg-white p-6 rounded shadow">
+          <h2 className="text-xl font-bold mb-4 text-center">Galería</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4  ">
+            <Image src="/C63.jpg" alt="C63" width={400} height={250} className="rounded object-cover" />
+            <Image src="/MACAN.jpg" alt="Macan" width={400} height={250} className="rounded object-cover" />
+            <Image src="/MINICOOPER.jpg" alt="Mini Cooper" width={400} height={250} className="rounded object-cover" />
+          </div>
+        </section>
             Galería de Autos Importados
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
