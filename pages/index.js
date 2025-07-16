@@ -207,10 +207,12 @@ export default function Home() {
         </section>
 
         {/* Galería */}
-        <section
-          id="galeria"
-          className="bg-white py-12 px-6 max-w-5xl mx-auto rounded-xl shadow-md"
-        >
+        <section id="galeria" className="bg-white py-12 px-6 max-w-5xl mx-auto mt-8 rounded-xl shadow-md">
+  <h2 className="text-2xl font-bold text-center mb-4">Galería de Autos Importados</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <Image src="/c63.jpg" alt="c63" width={500} height={300} className="rounded object-cover w-full h-48" />
+    <Image src="/macan.jpg" alt="macan" width={500} height={300} className="rounded object-cover w-full h-48" />
+    <Image src="/mini" alt="mini" width={500} height={300} className="rounded object-cover w-full h-48" />
           <h2 className="text-2xl font-bold text-center mb-4">
             Galería de Autos Importados
           </h2>
