@@ -231,14 +231,19 @@ export default function Home() {
         </section>
       </div>
 
-      <a
-        href="https://wa.me/5492964414587"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg p-4 z-50"
-        title="Contactanos por WhatsApp"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 448 512" className="w-6 h-6">
+      <a href="https://wa.me/5492964414587"
+         target="_blank"
+         rel="noopener noreferrer"
+         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg p-4 z-50"
+         title="Contactanos por WhatsApp">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentColor"
+          viewBox="0 0 448 512"
+          className="w-6 h-6"
+        >
           <path d="M380.9 97.1C339 55.3 283.2 32 224.5 32c-116.4 0-211 94.6-211 211 0 37.2 9.7 73.5 28.3 105.5L1.2 470.3c-2.3 6.6 4.1 13 10.7 10.7l121.7-40.6c31.1 16.8 66.2 25.7 101 25.7h.1c116.3 0 211-94.6 211-211 0-58.6-23.4-113.9-65.8-157z" />
         </svg>
       </a>
