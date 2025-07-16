@@ -137,49 +137,48 @@ export default function Home() {
             <li>Cripto: aceptamos USDT / USDC por contrato</li>
           </ul>
         </section>
-      </div>
-            <div className="mb-4">
-              <label className="block mb-1 text-sm font-medium">Origen</label>
-              <select
-                value={pais}
-                onChange={(e) => setPais(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded"
-              >
-                <option>Dubái</option>
-                <option>EE.UU.</option>
-                <option>Paraguay</option>
-              </select>
-            </div>
-            <div className="mb-4">
-              <label className="block mb-1 text-sm font-medium">
-                Valor del auto en USD
-              </label>
-              <input
-                type="number"
-                value={valor}
-                onChange={(e) => setValor(Number(e.target.value))}
-                className="w-full p-2 border border-gray-300 rounded"
-              />
-            </div>
-            <button
-              onClick={handleSimulacion}
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full"
-            >
-              Calcular
-            </button>
 
-            {resultado && (
-              <div className="mt-6 text-sm bg-blue-50 p-4 rounded-lg">
-                <p><strong>Origen:</strong> {resultado.origen}</p>
-                <p><strong>Precio exterior:</strong> {resultado.precioExterior}</p>
-                <p><strong>Total con comisión:</strong> {resultado.totalConComision}</p>
-                <p><strong>Precio en Argentina:</strong> {resultado.precioArgentina}</p>
-                <p className="text-green-600 font-semibold">
-                  Ahorro estimado: {resultado.ahorro}
-                </p>
-              </div>
-            )}
-          
+        <section id="simulador" className="bg-white py-12 px-6 max-w-4xl mx-auto mt-8 rounded-xl shadow-md">
+          <h2 className="text-2xl font-bold text-center mb-4">Simulador</h2>
+          <div className="mb-4">
+            <label className="block mb-1 text-sm font-medium">Origen</label>
+            <select
+              value={pais}
+              onChange={(e) => setPais(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded"
+            >
+              <option>Dubái</option>
+              <option>EE.UU.</option>
+              <option>Paraguay</option>
+            </select>
+          </div>
+          <div className="mb-4">
+            <label className="block mb-1 text-sm font-medium">Valor del auto en USD</label>
+            <input
+              type="number"
+              value={valor}
+              onChange={(e) => setValor(Number(e.target.value))}
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <button
+            onClick={handleSimulacion}
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full"
+          >
+            Calcular
+          </button>
+
+          {resultado && (
+            <div className="mt-6 text-sm bg-blue-50 p-4 rounded-lg">
+              <p><strong>Origen:</strong> {resultado.origen}</p>
+              <p><strong>Precio exterior:</strong> {resultado.precioExterior}</p>
+              <p><strong>Total con comisión:</strong> {resultado.totalConComision}</p>
+              <p><strong>Precio en Argentina:</strong> {resultado.precioArgentina}</p>
+              <p className="text-green-600 font-semibold">Ahorro estimado: {resultado.ahorro}</p>
+            </div>
+          )}
+        </section>
+      
         <section id="preguntas" className="mt-16 bg-white py-12 px-6 rounded-xl shadow-md max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Preguntas Frecuentes</h2>
           <div className="space-y-6">
